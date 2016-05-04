@@ -11,4 +11,24 @@ class DriverTest < ActiveSupport::TestCase
     @driver.name = nil
     refute(@driver.valid?, "Should be invalid without a name")
   end
+
+  test "Should be invalid with duplicate name" do
+    @driver = drivers(:one)
+    @driver.save
+
+    @dup = @driver.dup
+    refute(@dup.valid?, "Should not allow a duplicate name")
+    assert(@dup.errors[:name], "should have an error under :name")
+  end
+
+  test "Should be invalid with a duplicate but differnetly cased name" do
+    @driver = drivers(:one)
+    @driver.save
+
+    @dup = @driver.dup
+    @dup.name.upcase!
+    refute(@dup.valid?, "Should not allow a duplicate name")
+    assert(@dup.errors[:name], "should have an error under :name")
+  end
+
 end
