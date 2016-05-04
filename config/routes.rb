@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'greetings/new'
-
-  get 'greetings/show'
-
   root 'static_pages#home'
 
   get "/about" => 'static_pages#about', as: :about_page

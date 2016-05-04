@@ -1,6 +1,6 @@
-class CreateInsects < ActiveRecord::Migration
+class CreateDrivers < ActiveRecord::Migration
   def change
-    create_table :insects do |t|
+    create_table :drivers do |t|
       t.string :name
       t.string :team
       t.string :motor
