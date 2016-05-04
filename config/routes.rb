@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'driver/new'
-
-  get 'driver/show'
-
-  get 'driver/index'
-
-  get 'driver/edit'
+  get '/drivers/new' => 'drivers#new', as: :new_driver
+  # post '/drivers' => 'drivers#create', as: :
+  get '/drivers/index' => 'drivers#index', as: :drivers
+  get '/drivers/edit' => 'drivers#edit', as: :edit_driver
+  get '/drivers/:id' => 'drivers#show', as: :driver
 
   root 'static_pages#home'
 
