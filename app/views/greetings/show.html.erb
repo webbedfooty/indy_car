@@ -1,1 +1,14 @@
 <h1>Hello, <%= @name %></h1>
+
+<h1>Welcome to a new season of IndyCar!</h1>
+
+<%= form_tag(greeting_path, method: :get) do %>
+  <div>
+    <%= label_tag :favorite_driver, "Favorite Driver" %>
+    <%= text_field_tag :name %>
+  </div>
+  <div>
+    <%= submit_tag "Submit!" %>
+
+
+<% end %>
