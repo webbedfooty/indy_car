@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'driver/new'
+
+  get 'driver/show'
+
+  get 'driver/index'
+
+  get 'driver/edit'
+
   root 'static_pages#home'
 
   get "/about" => 'static_pages#about', as: :about_page
