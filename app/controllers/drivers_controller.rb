@@ -13,6 +13,6 @@ class DriversController < ApplicationController
   end
 
   def edit
-    @driver = Driver.find(params[id])
+    @driver = Driver.find(params[:id])
   end
 end
